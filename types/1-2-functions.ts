@@ -31,7 +31,8 @@
   printName('Ellie', undefined);
 
   // Default parameter
-  function printMessage(message: string = 'hello I am Default'){
+  function printMessage(message: string = 'hello I am Default')
+  {
     console.log(message);
   }
   printMessage();
