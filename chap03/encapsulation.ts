@@ -8,7 +8,7 @@
 
   class CoffeeMachine{        
     private _coffeeBeans:number; 
-    static BEANS_GRAM_PER_SHOT:number;
+    private static BEANS_GRAM_PER_SHOT:number;
 
     constructor(coffeeBeans:number){
       this._coffeeBeans = coffeeBeans;
@@ -20,6 +20,13 @@
 
     set setCoffeeBeans(value:number){
       this._coffeeBeans = value;
+    }
+
+    fillCoffeeBeans(coffeeBeans: number){
+      if(coffeeBeans < 0){
+        throw new Error(`value for beans should be greater than 0`);
+      }
+      this._coffeeBeans += coffeeBeans;
     }
 
     static newCoffeeMachine(coffeeBeans:number):CoffeeMachine {
@@ -43,9 +50,44 @@
   
   console.log(coffeeEx.makeCoffee(5));
   console.log(CoffeeMachine.newCoffeeMachine(10));
-  // class안에 static으로 함수를 만들면 새로운 인스턴스를 생성하지 않고 위처럼 함수에 접근할 수 있다.
-  // 다른 예를 들자면 Math.random과 같은 것들이 있다. Math.random도 인스턴스를 생성하지 않고 하자너
   console.log("  asd"+coffeeEx.getCoffeeBeans);
   coffeeEx.setCoffeeBeans = 150;
   console.log(coffeeEx.getCoffeeBeans);
+
+  // encapsulations를 해야하는 이유 아래처럼 외부서 coffeeBeans에 접근 가능할 경우 잘못 된 값을 넣으면 프로그램이 중지된다
+  // coffeeEx.cofeeBeans = 123;
+
+  // class User {
+  //   firstName: string;
+  //   lastName: string;
+  //   fullName: string;
+  //   constructor(firstNmae: string, lastName: string){
+  //     this.firstName = firstNmae;
+  //     this.lastName = lastName;
+  //     this.fullName =`${firstNmae} ${lastName}`;
+  //   }
+  // }
+
+  class User {
+    get fullName():string{
+      return `${this.firstName} ${this.lastName}`;
+    }
+    constructor(private firstName: string, private lastName: string){}
+
+    private internalAge = 5;
+    get age():number{
+      return this.internalAge;
+    }
+    set age(age:number){
+      this.internalAge = age;
+    }
+  }
+
+  const user = new User('james','carrey');
+  console.log(user.fullName);
+  console.log(user.fullName);
+  // getter를 쓰지 않으면 james carrey가 두번 나온다.
+  // 이유는 fullName은 바뀐 firstName이 아니라 바뀌기 전 firstName을 가지고 있기 때문이다
+  // 그렇지만 get을 쓰면 바뀐 것을 가지고 올 수 있다. 함수지만 변수처럼 접근해야한다.
+  console.log(user.fullName);
 }
