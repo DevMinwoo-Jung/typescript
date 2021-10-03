@@ -45,5 +45,7 @@
   console.log(coffeeEx);
   console.log(coffeeEx.makeCoffee(5));
   console.log(CoffeeMachine.newCoffeeMachine(10));
+  // class안에 static으로 함수를 만들면 새로운 인스턴스를 생성하지 않고 위처럼 함수에 접근할 수 있다.
+  // 다른 예를 들자면 Math.random과 같은 것들이 있다. Math.random도 인스턴스를 생성하지 않고 하자너
 
 }
