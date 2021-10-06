@@ -125,5 +125,5 @@
   machines.forEach(machine => {
     console.log('------------------');
     machine.makeCoffee(1);
-  })
+  });
 }

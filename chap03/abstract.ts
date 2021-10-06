@@ -112,3 +112,6 @@
     machine.makeCoffee(1);
   });
 }
+
+// abstract클래스는 object를 생성할 수 없다.
+// 각 클래스마다 조금씩 달라져야 하는 함수가 있다면 abstract method로 쓰면 된다.

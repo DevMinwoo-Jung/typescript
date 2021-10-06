@@ -26,7 +26,7 @@
 
     pop():string {
       if(this.head == null){
-        throw new Error('Strack is empty');
+        throw new Error('Stack is empty');
       }
       const node = this.head;
       this.head = node.next;
