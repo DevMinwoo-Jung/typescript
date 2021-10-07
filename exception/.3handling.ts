@@ -33,9 +33,10 @@ class App {
 }
 /**
  * error를 세분화하여 알리고 싶을때 아래와 같이 하면 될까??
+ * 아니다. 위처럼 instanceof를 사용해도 catch에서 any로 받기 때문에 instanceof를 사용할 수 없다!
  */
- class TimeoutError extends Error {}
- class OfflineError extends Error {}
+class TimeoutError extends Error {}
+class OfflineError extends Error {}
 
 const clinet = new NetworkClient();
 const service = new UserService(clinet);

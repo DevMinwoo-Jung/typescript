@@ -49,5 +49,6 @@ function badrun(){
     console.log(`closed!`);
 }
   badrun();
-
+ // 어차피 실행될 거라면 finally를 안쓰고 그냥 밑에다 쓰면 되지 않냐? 라고 할 수 있지만
+ // 이 케이스처럼 finally를 안써주면 return부분에서 코드가 끝나게되어 closeFile과 console.log가 찍히지 않게 된다!
 }
