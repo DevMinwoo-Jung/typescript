@@ -22,7 +22,7 @@ callerFunc(); // undefined다 왜냐하면 let과 const로 선언한 변수는 w
 
 const callerFunc2 = counter.increase.bind(counter);
 callerFunc2();
-
+// undefined가 안되려면 bind로 할 수 있다. 아니면 그냥 class 안에서 arrow function을 쓰면 된다.
 class Bob {
 
 }
