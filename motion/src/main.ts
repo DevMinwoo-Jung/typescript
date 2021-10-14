@@ -1,24 +1,17 @@
+import { Close } from './close.js';
+import { Add } from './add.js';
 
 
 window.onload = () => {
-    const btnBox = document.querySelectorAll('.closeBtn__box');
-    const btn = document.querySelectorAll('.closeBtn');
-    const addItem = document.querySelectorAll('.category');
-    
-    for(const button of btnBox){
-      button.addEventListener('click', () => {
-          console.log(button.parentNode?.parentNode);
-          button.parentNode?.parentNode?.parentNode?.removeChild(button.parentNode?.parentNode);
-        }
-      )}
+  const closeClass = new Close();
+  const addClass = new Add();
 
-      // 상자 지우기
-      for(const button of btn){
-        button.addEventListener('click', () => {
-            const toggleAdd = button.parentElement?.parentElement?.className;
-            document.querySelector(`.${toggleAdd}`)?.setAttribute("style", "display: none");
-          }
-        )}
+  closeClass.closeContents();
+  closeClass.closeInputs();
+  addClass.checkInputType();
+
+  const addItem = document.querySelectorAll('.category');
+
   
       // 상자 열기
     for(const item of addItem){
@@ -39,6 +32,8 @@ window.onload = () => {
         }
       })
     }
+
+
 
 
   
