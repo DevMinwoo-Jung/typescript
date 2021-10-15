@@ -1,8 +1,10 @@
 import { Close } from './close.js';
 import { Add } from './add.js';
+import { Drag } from './drag.js';
 window.onload = () => {
     const closeClass = new Close();
     const addClass = new Add();
+    const dragCalss = new Drag();
     closeClass.closeContents();
     closeClass.closeInputs();
     addClass.checkInputType();

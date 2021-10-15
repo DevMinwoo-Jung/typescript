@@ -34,6 +34,7 @@ body {
   margin-top: 12rem;
   display: block;
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 40rem;
   height: 75vh;
 }
@@ -58,8 +59,16 @@ body {
   font-size: 0.7rem;
 }
 
+.drag {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.drag:hover {
+  transform: scale(1.005);
+}
+
 /* show section */
-.img__div {
+.img__box {
   width: 90%;
   height: 15rem;
   border: 1px solid;

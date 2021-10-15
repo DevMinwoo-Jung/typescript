@@ -32,12 +32,15 @@ export class Add{
     const imgTitle = (<HTMLInputElement>document.querySelector('.img__title')).value;
       const contentsDiv = document.querySelector('.contents');
       contentsDiv?.insertAdjacentHTML('beforeend', 
-      `<div class="img__div">
+      `
+      <div class="drag" draggable="true">
+      <div class="img__div">
         <img class="img" src=${imgUrl} alt="">
         <div class="text__div">
           <p class="text">${imgTitle}</p>
           <button class="closeBtn__box">x</button>
         </div>
+      </div>
       </div>`);
   }
 
@@ -46,12 +49,15 @@ export class Add{
     const videoTitle = (<HTMLInputElement>document.querySelector('.video__title')).value;
       const contentsDiv = document.querySelector('.contents');
       contentsDiv?.insertAdjacentHTML('beforeend', 
-      `<div class="video__box">
+      `
+      <div class="drag" draggable="true">
+      <div class="video__box">
         <iframe class="vidoe" src=${videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="text__div">
           <p class="text">${videoTitle}</p>
           <button class="closeBtn__box">x</button>
         </div>
+      </div>
       </div>`);
   }
 
@@ -60,12 +66,15 @@ export class Add{
     const noteInput = (<HTMLInputElement>document.querySelector('.note__input')).value;
       const contentsDiv = document.querySelector('.contents');
       contentsDiv?.insertAdjacentHTML('beforeend', 
-      `<div class="note__box">
+      `
+      <div class="drag" draggable="true">
+      <div class="note__box">
         <div class="text__box">
           <p>${noteTitle}</p>
           <p>${noteInput}</p>
           <button class="closeBtn__box">x</button>
         </div>
+      </div>
       </div> `);
   }
 
@@ -74,12 +83,15 @@ export class Add{
     const taskInput = (<HTMLInputElement>document.querySelector('.task__input')).value;
       const contentsDiv = document.querySelector('.contents');
       contentsDiv?.insertAdjacentHTML('beforeend', 
-      `<div class="task__box">
+      `
+      <div class="drag" draggable="true">
+      <div class="task__box">
         <div class="text__box">
           <p>${taskTitle}</p>
           <ul>${taskInput}</ul>
           <button class="closeBtn__box">x</button>
         </div>
+      </div>
       </div>`);
   }
 
