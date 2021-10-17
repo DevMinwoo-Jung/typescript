@@ -2,7 +2,7 @@
  *  Encapsulate the HTML element creation
  */
 export interface Component {
-  attachTo(paretn: HTMLElement, position?: InsertPosition):void;
+  attachTo(parent: HTMLElement, position?: InsertPosition) : void;
 }
 
 export class BaseComponent<T extends HTMLElement> implements Component {
@@ -14,7 +14,7 @@ export class BaseComponent<T extends HTMLElement> implements Component {
     this.element = template.content.firstElementChild! as T;
   }
 
-  attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin'){
+  attachTo(parent: HTMLElement, position: InsertPosition = 'afterend'){
     parent.insertAdjacentElement(position, this.element);
   }
 
