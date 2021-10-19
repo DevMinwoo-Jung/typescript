@@ -15,6 +15,14 @@ class App {
         this.bindElementToDialog('#new-video', MediaSectionInput, (input) => new VideoComponet(input.title, input.url));
         this.bindElementToDialog('#new-note', TextSectionInput, (input) => new NoteComponet(input.title, input.title));
         this.bindElementToDialog('#new-todo', TextSectionInput, (input) => new TodoComponet(input.title, input.title));
+        this.page.addChild(new ImageComponent('Image Title', 'https://picsum.photos/800/400'));
+        this.page.addChild(new VideoComponet('Video Title', 'https://youtu.be/D7cwvvA7cP0'));
+        this.page.addChild(new NoteComponet('Note Title', "Don't forget to code your dream"));
+        this.page.addChild(new TodoComponet('Todo Title', 'TypeScript Course!'));
+        this.page.addChild(new ImageComponent('Image Title', 'https://picsum.photos/800/400'));
+        this.page.addChild(new VideoComponet('Video Title', 'https://youtu.be/D7cwvvA7cP0'));
+        this.page.addChild(new NoteComponet('Note Title', "Don't forget to code your dream"));
+        this.page.addChild(new TodoComponet('Todo Title', 'TypeScript Course!'));
     }
     bindElementToDialog(selector, InputComponent, makeSection) {
         const imageBtn = document.querySelector(selector);
